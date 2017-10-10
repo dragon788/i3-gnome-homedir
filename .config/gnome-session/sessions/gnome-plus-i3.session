@@ -1,0 +1,3 @@
+[GNOME Session]
+Name=GNOME + i3
+RequiredComponents=gnome-flashback-init;gnome-flashback;i3;gnome-settings-daemon
