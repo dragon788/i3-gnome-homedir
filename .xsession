@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/bin/bash -x
 # Menu tools use this value to decide which applications
 # are approriate for the current session.
 if [ -z $XDG_CURRENT_DESKTOP ]; then
-    export XDG_CURRENT_DESKTOP="GNOME-Flashback:GNOME"
+    # Drop Unity if you have issues with certain apps
+    export XDG_CURRENT_DESKTOP="GNOME-Flashback:GNOME:Unity"
     export I3_IS_AWESOME='i3'
 fi
 
@@ -17,5 +18,5 @@ pactl load-module \
     sample=x11-bell
 
 # Run gnome-session and tell it to use our i3 session.
-#dbus-launch nm-applet &
-exec gnome-session --session=gnome-plus-i3 --disable-acceleration-check
+# Running the exec allows it to inherit the dbus-session of gdm???
+exec gnome-session --session=gnome-plus-i3 --debug --disable-acceleration-check "$@"

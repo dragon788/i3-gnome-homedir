@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=gnome-plus-i3
+Comment=improved dynamic tiling window manager with Gnome underpinnings
+Exec=gnome-plus-i3
+NoDisplay=true
+X-GNOME-WMName=Gnome plus i3
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=windowmanager
+StartupWMClass=i3
